@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Перевірка</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Cкільки хвилин у годині?</h1>
+    <div class="container">
+      <div>
+        <select>
+          <option type="radio" name="variant" value="a">60</option>
+          <option type="radio" name="variant" value="b">30</option>
+          <option type="radio" name="variant" value="c">1</option>
+        </select>
+      </div>
+
+      <button onclick="checkOption()">Перевірити</button>
+      <p id="result"></p>
+    </div>
+    <div class="link">
+      <a href="../index.html">вибір завдань</a>
+    </div>
+
+    <script>
+      function checkOption() {
+        var selectedOption = document.querySelector('option[name="variant"]:checked');
+        var resultText = document.getElementById("result");
+        var correctOption = "a";
+
+        if (selectedOption) {
+          if (selectedOption.value === correctOption) {
+            resultText.textContent = "Ви обрали вірний варіант!";
+          } else {
+            resultText.textContent = "Ви обрали неправильний варіант.";
+          }
+        } else {
+          resultText.textContent = "Будь ласка, оберіть один з варіантів.";
+        }
+      }
+    </script>
+  </body>
+</html>

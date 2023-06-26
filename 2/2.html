@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Перевірка</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Який логічний елемент використовується?</h1>
+    <div class="container">
+      <table>
+        <tr>
+          <th>X1</th>
+          <th>X2</th>
+          <th>Y</th>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>0</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+      </table>
+
+      <div>
+        <label for="options">Оберіть елемент:</label>
+        <select id="options">
+          <option value="І">I (кон'юкція)</option>
+          <option value="АБО">АБО (диз'юкція)</option>
+          <option value="ВИКЛЮЧАЮЧЕ АБО">
+            ВИКЛЮЧАЮЧЕ АБО (нерівнозначність)
+          </option>
+          <option value="АБО-НЕ">АБО-НЕ (стрілка Пірса)</option>
+          <option value="І-НЕ">І-НЕ (штрих Шеффера)</option>
+          <option value="ВИКЛЮЧАЮЧЕ АБО-НЕ">
+            ВИКЛЮЧАЮЧЕ АБО-НЕ (рівнозначність)
+          </option>
+        </select>
+      </div>
+
+      <button onmouseover="checkOption()">Перевірити</button>
+      <p id="result"></p>
+    </div>
+    <div class="link">
+      <a href="../index.html">вибір завдань</a>
+    </div>
+
+    <script>
+      function checkOption() {
+        var selectedOption = document.getElementById("options").value;
+        var resultText = document.getElementById("result");
+        var correctOption = "І-НЕ";
+
+        if (selectedOption === correctOption) {
+          resultText.textContent = "Ви обрали вірний варіант!";
+        } else {
+          resultText.textContent = "Ви обрали неправильний варіант.";
+        }
+      }
+    </script>
+  </body>
+</html>
